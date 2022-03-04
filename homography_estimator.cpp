@@ -161,7 +161,7 @@ float HomographyEstimator::computeReprojectionError(const Eigen::Vector2f& pt1, 
   Eigen::Vector2f pt_1_in_2 = (H * pt1.homogeneous()).hnormalized();
   Eigen::Vector2f pt_2_in_1 = (H_inv * pt2.homogeneous()).hnormalized();
 
-  // Compute the two-sided reprojection error \sigma_i.
+  // Compute the two-sided reprojection error \epsilon_i.
   return (pt1 - pt_2_in_1).norm() + (pt2 - pt_1_in_2).norm();
 }
 
